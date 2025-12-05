@@ -1,0 +1,225 @@
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #221305;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 3rem 3rem;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left Side with Mango + Form */
+.left-pane {
+  position: relative;
+  flex: 1;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.mango-bg {
+  width: 1000px; /* sized up */
+  max-width: 130%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  width: 320px;
+  padding: 1rem;
+  z-index: 1;
+}
+
+
+/* Right Side with Comments */
+.right-pane {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Your existing .container and .card CSS go here */
+
+/* From Uiverse.io by codebykay101 */ 
+
+
+
+.container form .descr {
+  font-size: 20px;
+  font-weight: 500;
+  color: #e8e8e8;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input, textarea {
+  margin: 1em 0 1em 0;
+  width: 300px;
+  position: relative;
+}
+
+.input input, textarea {
+  font-size: 100%;
+  padding: 0.7em;
+  outline: none;
+  color: #e8e8e8;
+  border: none;
+  border-bottom: 2px solid #e8e8e8;
+  background: transparent;
+  border-radius: none;
+  width: 100%;
+  resize: none;
+}
+
+.input label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  color: #e8e8e8;
+  padding: 0.7em;
+  margin-left: 0.1em;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  text-transform: uppercase;
+}
+
+.input :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  padding: 0.4em;
+  background: transparent;
+}
+
+.input textarea:focus ~ label,
+.input textarea:valid ~ label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  padding: 0.4em;
+  background: transparent;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(37, 37, 211);
+}
+
+.form button {
+  color: #e8e8e8;
+  font-size: 15px;
+  align-self: flex-start;
+  padding: 0.6em;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 50px;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.form button:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e8e8e8;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form button:hover:before {
+  opacity: 0.2;
+}
+
+.form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   BOOKUS PAGE — MOBILE RESPONSIVE LAYOUT
+   ============================================ */
+@media (max-width: 768px) {
+
+    .page-wrapper {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    /* LEFT SIDE */
+    .left-pane {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .mango-bg {
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        transform: none;
+        left: 0;
+        margin: 0 auto 1rem auto;
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .input,
+    textarea {
+        width: 100%;
+    }
+
+    /* RIGHT IMAGE */
+    .right-pane {
+        width: 100%;
+    }
+
+    .right-img {
+        width: 100%;
+        max-width: 450px;
+        display: block;
+        margin: 0 auto;
+    }
+}
